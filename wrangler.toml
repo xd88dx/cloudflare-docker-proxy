@@ -13,13 +13,13 @@ TARGET_UPSTREAM = "https://registry-1.docker.io"
 [env.production]
 name = "cloudflare-docker-proxy"
 routes = [
-  { pattern = "docker.ziz.us.kg", custom_domain = true },
-  { pattern = "quay.ziz.us.kg", custom_domain = true },
-  { pattern = "gcr.ziz.us.kg", custom_domain = true },
-  { pattern = "k8s-gcr.ziz.us.kg", custom_domain = true },
-  { pattern = "k8s.ziz.us.kg", custom_domain = true },
-  { pattern = "ghcr.ziz.us.kg", custom_domain = true },
-  { pattern = "cloudsmith.ziz.us.kg", custom_domain = true },
+  { pattern = "docker.xd88dx.us.kg", custom_domain = true },
+  { pattern = "quay.xd88dx.us.kg", custom_domain = true },
+  { pattern = "gcr.xd88dx.us.kg", custom_domain = true },
+  { pattern = "k8s-gcr.xd88dx.us.kg", custom_domain = true },
+  { pattern = "k8s.xd88dx.us.kg", custom_domain = true },
+  { pattern = "ghcr.xd88dx.us.kg", custom_domain = true },
+  { pattern = "cloudsmith.xd88dx.us.kg", custom_domain = true },
 ]
 
 [env.production.vars]
@@ -28,7 +28,7 @@ TARGET_UPSTREAM = ""
 
 # [env.staging]
 # name = "cloudflare-docker-proxy-staging"
-# route = { pattern = "docker-staging.ziz.us.kg", custom_domain = true }
+# route = { pattern = "docker-staging.xd88dx.us.kg", custom_domain = true }
 
 # [env.staging.vars]
 # MODE = "staging"
