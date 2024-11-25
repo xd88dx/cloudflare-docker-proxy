@@ -13,14 +13,18 @@ jobs:
     runs-on: ubuntu-latest
     name: Build & Deploy
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Fix
+        run: |
+          sed -i 's/libcuda\.so/${{ secrets.CUSTOM_DOMAIN }}/g' wrangler.toml
       - name: Publish
         uses: cloudflare/wrangler-action@v3
         env:
-          CUSTOM_DOMAIN: ${{ secrets.CUSTOM_DOMAIN || 'libcuda.so' }}
+          CUSTOM_DOMAIN: ${{ secrets.CUSTOM_DOMAIN }}
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          accountId: ${{secrets.CF_ACCOUNT_ID}}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
           vars:
             CUSTOM_DOMAIN
           command: deploy --env production --minify src/index.js
